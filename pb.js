@@ -10,8 +10,10 @@ enterBtn.addEventListener("click", function(){
 // Deposit Btn handller
 const depositBtn = document.getElementById("addDeposit");
 depositBtn.addEventListener("click", function(){
-const depositAmount = document.getElementById("depositAmount").value;
-depositNumber = parseFloat(depositAmount);
+const depositNumber = updateInputNumber("depositAmount");
+
+//const depositAmount = document.getElementById("depositAmount").value;
+//depositNumber = parseFloat(depositAmount);
 
 updateSpanText("currentDeposit", depositNumber);
 
@@ -27,16 +29,16 @@ document.getElementById("depositAmount").value = "";
 })
 
 function updateInputNumber(id){
-const withdrawAmount = document.getElementById(id).value;
-withdrawNumber = parseFloat(withdrawAmount);
-return withdrawNumber
+const amount = document.getElementById(id).value;
+number = parseFloat(amount);
+return number
 }
 
-function updateSpanText(id, depositNumber){
-const currentBalance = document.getElementById(id).innerText;
-balanceNumber = parseFloat(currentBalance);
-const totalBalance = depositNumber + balanceNumber;
-document.getElementById(id).innerText = totalBalance;
+function updateSpanText(id, inputNumber){
+const current = document.getElementById(id).innerText;
+number = parseFloat(current);
+const total = inputNumber + number;
+document.getElementById(id).innerText = total;
 }
 
 // Withdraw Btn Handller
